@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PYPA.Bankrupt", "PYPA.Bankrupt\PYPA.Bankrupt.csproj", "{938636F0-6CD7-4043-8F1D-64B475967E5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PYPA.Bankrupt.Core", "PYPA.Bankrupt.Core\PYPA.Bankrupt.Core.csproj", "{CA08E7A3-84A7-4AA5-9DB8-B38AB9D1211D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PYPA.Bankrupt.Game", "PYPA.Bankrupt.Game\PYPA.Bankrupt.Game.csproj", "{9582297C-B210-45E1-97E2-C710CA414117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PYPA.Bankrupt.IA", "PYPA.Bankrupt.IA\PYPA.Bankrupt.IA.csproj", "{3CF754A8-C29D-493F-8245-192AB0A7B129}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{938636F0-6CD7-4043-8F1D-64B475967E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938636F0-6CD7-4043-8F1D-64B475967E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938636F0-6CD7-4043-8F1D-64B475967E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938636F0-6CD7-4043-8F1D-64B475967E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA08E7A3-84A7-4AA5-9DB8-B38AB9D1211D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA08E7A3-84A7-4AA5-9DB8-B38AB9D1211D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA08E7A3-84A7-4AA5-9DB8-B38AB9D1211D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA08E7A3-84A7-4AA5-9DB8-B38AB9D1211D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9582297C-B210-45E1-97E2-C710CA414117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9582297C-B210-45E1-97E2-C710CA414117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9582297C-B210-45E1-97E2-C710CA414117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9582297C-B210-45E1-97E2-C710CA414117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF754A8-C29D-493F-8245-192AB0A7B129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF754A8-C29D-493F-8245-192AB0A7B129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF754A8-C29D-493F-8245-192AB0A7B129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF754A8-C29D-493F-8245-192AB0A7B129}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72C4CECC-6293-4201-9C21-C262E9421B87}
+	EndGlobalSection
+EndGlobal
