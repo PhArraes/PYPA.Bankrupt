@@ -30,7 +30,7 @@ namespace PYPA.Bankrupt
                         .ForEach(c =>
                         {
                             var perc = (c.Value / (double)NúmeroDeSimulações) * 100;
-                            listPerc.Add($"{c.Key} {string.Format("{0:0.00}", perc)}%");
+                            listPerc.Add($"{c.Key} = {string.Format("{0:0.00}", perc)}%");
                         });
                 return listPerc;
             }

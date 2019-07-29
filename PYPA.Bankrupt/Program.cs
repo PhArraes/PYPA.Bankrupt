@@ -19,21 +19,30 @@ namespace PYPA.Bankrupt
             var file = $"gameConfig.txt";
             var props = ConfigReader.Read(file);
             var numJogadas = 300;
-            for (int i = 0; i < 1; i++)
+
+            var repetições = 1;
+            if (args.Length > 0 && int.TryParse(args[0], out repetições))
+                repetições = repetições <= 0 ? 1 : repetições;
+            for (int i = 0; i < repetições; i++)
             {
                 GameSimulationEngine engine = new GameSimulationEngine(props, numJogadas);
                 engine.Executar();
 
+                Console.WriteLine("Quantas partidas terminam por time out:");
+                Console.WriteLine($"\t => {engine.NumSimulaçõesComTimeout}");
 
-                Console.WriteLine(engine.NumSimulaçõesComTimeout);
-                Console.WriteLine(engine.MédiaDeDuraçãoDeSimulações);
+                Console.WriteLine("Quantos turnos em média demora uma partida:");
+                Console.WriteLine($"\t => {engine.MédiaDeDuraçãoDeSimulações}");
+
+                Console.WriteLine("Qual a porcentagem de vitórias por comportamento dos jogadores:");
                 engine.VencedorPercentual
                     .ForEach(c =>
                     {
-                        Console.WriteLine(c);
+                        Console.WriteLine($"\t => {c}");
                     });
-                Console.WriteLine(engine.MaiorVencedor);
-                //Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine("Qual o comportamento que mais vence:");
+                Console.WriteLine($"\t => { engine.MaiorVencedor}");
+                if (repetições > 1) Console.WriteLine("---------------------------------------------------");
             }
 
             Console.ReadKey();
