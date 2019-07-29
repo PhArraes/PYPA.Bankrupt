@@ -7,14 +7,14 @@ namespace PYPA.Bankrupt.Core
     public class Entity
     {
         public Guid Id { get;private set;}
-        public DateTime CreationTime { get;private set;}
-        public Boolean Active { get;private set;}
+        public DateTime DataCriação { get;private set;}
+        public Boolean Ativo { get;private set;}
 
-        public Entity(Guid id, DateTime creationTime)
+        public Entity(Guid id, DateTime dataCriação)
         {
             this.Id = id;
-            this.CreationTime = creationTime;
-            Active = true;
+            this.DataCriação = dataCriação;
+            Ativo = true;
         }
 
     }

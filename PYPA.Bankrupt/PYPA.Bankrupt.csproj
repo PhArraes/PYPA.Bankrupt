@@ -11,4 +11,10 @@
     <ProjectReference Include="..\PYPA.Bankrupt.IA\PYPA.Bankrupt.IA.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="gameConfig.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

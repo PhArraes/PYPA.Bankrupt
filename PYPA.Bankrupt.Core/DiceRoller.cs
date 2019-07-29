@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PYPA.Bankrupt.Core
 {
-    class DiceRoller 
+    public class DiceRoller : IRoller
     {
         public int Faces { get;  }
         private Roller Roller;

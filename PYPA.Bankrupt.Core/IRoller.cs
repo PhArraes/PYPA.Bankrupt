@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PYPA.Bankrupt.Game
+namespace PYPA.Bankrupt.Core
 {
     public interface IRoller
     {

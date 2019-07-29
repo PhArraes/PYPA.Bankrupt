@@ -14,7 +14,7 @@ namespace PYPA.Bankrupt.Core
             {
                 byte[] rno = new byte[32];
                 rg.GetBytes(rno);
-                int randomvalue = BitConverter.ToInt32(rno, 0);Console.WriteLine(randomvalue);
+                int randomvalue = BitConverter.ToInt32(rno, 0);
                 r = new Random(randomvalue);
             }
         }

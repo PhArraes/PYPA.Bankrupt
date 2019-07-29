@@ -1,6 +1,14 @@
 ﻿using PYPA.Bankrupt.Core;
+using PYPA.Bankrupt.Game;
+using PYPA.Bankrupt.Game.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PYPA.Bankrupt
 {
@@ -8,44 +16,27 @@ namespace PYPA.Bankrupt
     {
         static void Main(string[] args)
         {
-            Dictionary<int, int> pairs = new Dictionary<int, int>();
-            pairs.Add(0,0);
-            pairs.Add(1, 0);
-            pairs.Add(2,0);
-            pairs.Add(3, 0);
-            pairs.Add(4, 0);
-            pairs.Add(5, 0);
-            Roller r = new Roller();
-            int i = 0;
+            var file = $"gameConfig.txt";
+            var props = ConfigReader.Read(file);
+            var numJogadas = 300;
+            for (int i = 0; i < 1; i++)
+            {
+                GameSimulationEngine engine = new GameSimulationEngine(props, numJogadas);
+                engine.Executar();
 
-            while (i++ < 1000000) {
-                var rdm = r.RollInt(6);
-                pairs[rdm]++;
+
+                Console.WriteLine(engine.NumSimulaçõesComTimeout);
+                Console.WriteLine(engine.MédiaDeDuraçãoDeSimulações);
+                engine.VencedorPercentual
+                    .ForEach(c =>
+                    {
+                        Console.WriteLine(c);
+                    });
+                Console.WriteLine(engine.MaiorVencedor);
+                //Console.WriteLine("---------------------------------------------------");
             }
-            Console.WriteLine($"{pairs[0]}  {pairs[1]} {pairs[2]} {pairs[3]} {pairs[4]} {pairs[5]}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            //Console.WriteLine($"{r.RollInt(6)}  {r.RollRNGInt(6)}");
-            Console.WriteLine("Hello World!");
+
+            Console.ReadKey();
         }
     }
 }

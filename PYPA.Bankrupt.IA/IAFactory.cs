@@ -14,9 +14,9 @@ namespace PYPA.Bankrupt.IA
         {
             _IAStrategy = new Dictionary<Personalidade, Func<IPlayerIA>>();
             _IAStrategy.Add(Personalidade.Aleatório, CreateAleatório);
-            _IAStrategy.Add(Personalidade.Cauteloso, CreateAleatório);
-            _IAStrategy.Add(Personalidade.Exigente, CreateAleatório);
-            _IAStrategy.Add(Personalidade.Impulsivo, CreateAleatório);
+            _IAStrategy.Add(Personalidade.Cauteloso, CreateCauteloso);
+            _IAStrategy.Add(Personalidade.Exigente, CreateExigente);
+            _IAStrategy.Add(Personalidade.Impulsivo, CreateImpulsivo);
         }
 
         public IPlayerIA CreateIA(Personalidade personalidade)

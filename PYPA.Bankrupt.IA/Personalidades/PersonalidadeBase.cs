@@ -10,11 +10,16 @@ namespace PYPA.Bankrupt.IA.Personalidades
     {
         public Ação Jogar(IJogada jogada)
         {
-            if (jogada.AçõesPossíveis.Contains(Ação.Comprar) && PodeComprar(jogada))
+            if (jogada.AçõesPossíveis.Contains(Ação.Comprar) && TemDinheiroParaComprar(jogada) && PodeComprar(jogada))
                 return Ação.Comprar;
             if (jogada.AçõesPossíveis.Contains(Ação.PagarAluguel))
                 return Ação.PagarAluguel;
             return Ação.Passar;
+        }
+
+        public bool TemDinheiroParaComprar(IJogada jogada)
+        {
+            return jogada.Saldo >= jogada.Propriedade.ValorDeVenda;
         }
 
         protected abstract bool PodeComprar(IJogada jogada);

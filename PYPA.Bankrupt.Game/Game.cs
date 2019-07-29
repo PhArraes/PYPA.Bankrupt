@@ -16,7 +16,7 @@ namespace PYPA.Bankrupt.Game
         public int Rodada { get; private set; }
         public Boolean Terminou { get; private set; }
 
-        public List<Guid> PlayersVencendo
+        public List<Player> PlayersVencendo
         {
             get
             {
@@ -24,7 +24,14 @@ namespace PYPA.Bankrupt.Game
                 return _gameState.PlayersRank
                     .Where(p => !p.Carteira.Bankrupt)
                     .Where(p => p.Carteira.Coins == rank[0].Carteira.Coins)
-                    .Select(p => p.Player).ToList();
+                    .Select(p => Players.First(pl => pl.Id == p.Player)).ToList();
+            }
+        }
+        public Player Vencendor
+        {
+            get
+            {                
+                return PlayersVencendo.FirstOrDefault();
             }
         }
 
@@ -33,7 +40,7 @@ namespace PYPA.Bankrupt.Game
         private GameState _gameState;
         private bool _rodadaIniciada;
         private IJogada _jogadaAtual;
-        public Game(List<IDadosPropriedade> propriedades, List<Player> players, IRoller roller, DateTime creationTime) : base(Guid.NewGuid(), creationTime)
+        public Game(List<IDadosPropriedade> propriedades, List<Player> players, IRoller roller, DateTime dataCriação) : base(Guid.NewGuid(), dataCriação)
         {
             Iniciado = false;
             Roller = roller;
@@ -76,7 +83,7 @@ namespace PYPA.Bankrupt.Game
             _playerAtual = PróximoNumPlayer();
             var p = Players.ElementAt(_playerAtual);
             var playerState = _gameState.PlayerGameState(p.Id);
-            while (!playerState.Carteira.Bankrupt)
+            while (playerState.Carteira.Bankrupt)
             {
                 _playerAtual = PróximoNumPlayer();
                 p = Players.ElementAt(_playerAtual);
@@ -109,7 +116,7 @@ namespace PYPA.Bankrupt.Game
 
         private void VerificarFimDeJogo()
         {
-            Terminou = Rodada > 999 || _gameState.PlayersAtivos <= 1;
+            Terminou = Rodada >= GameConfig.MAX_RODADAS || _gameState.PlayersAtivos <= 1;
         }
 
         private void AdicionaPassar(IPlayerGameState playerState, Jogada jogada)
