@@ -14,12 +14,42 @@
  $ dotnet build
  $ dotnet run
  ```
-  Opcional:
+  
+ 
+## Execução Visual Studio 2019
+Abrir Solução:
+``` 
+PYPA.Bankrupt\PYPA.Bankrupt.sln
+```
+ Executar projeto console: 
+ ``` 
+ PYPA.Bankrupt\PYPA.Bankrupt 
+ ```
+
+
+## Formato da Saída
+```
+Quantas partidas terminam por time out:
+         => 0
+Quantos turnos em média demora uma partida:
+         => 92
+Qual a porcentagem de vitórias por comportamento dos jogadores:
+         => aleatório = 18,33%
+         => cauteloso = 25,00%
+         => exigente = 19,00%
+         => impulsivo = 35,67%
+Qual o comportamento que mais vence:
+         => impulsivo
+```
+
+## Opcional
   Especificar o número de vezes que as simulações serão executadas
  ```
  $ dotnet run 3
+ ```
  Saída:
- Quantas partidas terminam por time out:
+ ```
+Quantas partidas terminam por time out:
          => 0
 Quantos turnos em média demora uma partida:
          => 95
@@ -56,30 +86,3 @@ Qual o comportamento que mais vence:
          => impulsivo
 ---------------------------------------------------
  ```
- 
-## Execução Visual Studio 2019
-Abrir Solução:
-``` 
-PYPA.Bankrupt\PYPA.Bankrupt.sln
-```
- Executar projeto console: 
- ``` 
- PYPA.Bankrupt\PYPA.Bankrupt 
- ```
-
-
-## Formato da Saída
-```
-Quantas partidas terminam por time out:
-         => 0
-Quantos turnos em média demora uma partida:
-         => 92
-Qual a porcentagem de vitórias por comportamento dos jogadores:
-         => aleatório = 18,33%
-         => cauteloso = 25,00%
-         => exigente = 19,00%
-         => impulsivo = 35,67%
-Qual o comportamento que mais vence:
-         => impulsivo
-```
-
