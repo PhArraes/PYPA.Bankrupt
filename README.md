@@ -2,9 +2,9 @@
 
 
 ## Dependências 
- <a href="https://dotnet.microsoft.com/download">dotnet core 2.2</a>
+ <a href="https://dotnet.microsoft.com/download">dotnet core 2.2 SDK</a>
  
-## Execução
+## Execução Comand Line
  Entrar no diretório: 
  ``` 
  PYPA.Bankrupt\PYPA.Bankrupt 
@@ -13,6 +13,16 @@
  ```
  $ dotnet build
  $ dotnet run
+ ```
+ 
+## Execução Visual Studio 2019
+Abrir Solução:
+``` 
+PYPA.Bankrupt\PYPA.Bankrupt.sln
+```
+ Executar projeto console: 
+ ``` 
+ PYPA.Bankrupt\PYPA.Bankrupt 
  ```
 
 
